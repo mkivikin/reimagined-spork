@@ -34,7 +34,7 @@ function savePlaces($places){
           $stmt1 = $mysqli->prepare("INSERT INTO Categories (restaraunt_id, category) values (?,?)");
           var_dump($place->category_list);
           foreach($place->category_list as $category) {
-            $stmt1->bind_param("is", $counter, $category);
+            $stmt1->bind_param("is", $counter, $category->name);
             $stmt1->execute();
           }
           }
@@ -42,7 +42,6 @@ function savePlaces($places){
           echo "Error: " .$stmt->error;
         }
       }
-    }
     $stmt->close();
     $mysqli->close();
         /*var_dump($place->category_list);
