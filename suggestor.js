@@ -1,6 +1,6 @@
 var action = "default";
 var value = "";
-
+fetchSuggestions();
 function fetchSuggestions(action, value) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
